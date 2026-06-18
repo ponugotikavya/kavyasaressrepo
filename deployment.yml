@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kavya
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      myapp: kavya
+  template:
+    metadata:
+      labels:
+        myapp: kavya
+    spec:
+      containers:
+        - name: mycont
+          image: ponugotikavya/kavyasaress:newv1
+          ports:
+            - containerPort: 5000
+
